@@ -1,0 +1,89 @@
+#+OPTIONS: toc:nil num:nil
+
+#+BEGIN_EXPORT latex
+\begin{center}
+{\Large\bfseries Arulselvan Madhavan\par}
+\vspace{0.2em}
+{\small San Francisco, California | \href{mailto:arulselvan1234@gmail.com}{arulselvan1234@gmail.com} | (650)-336-3892\par}
+\vspace{0.1em}
+{\small \href{http://www.linkedin.com/in/arulselvanmadhavan}{LinkedIn} | \href{https://github.com/ArulselvanMadhavan}{Github} | \href{https://scholar.google.com/citations?hl=en&user=8r4bPwQAAAAJ}{Google Scholar}\par}
+\end{center}
+\vspace{0.35em}
+#+END_EXPORT
+
+#+BEGIN_EXPORT html
+<div class="cv-header">
+<p class="cv-name"><strong>Arulselvan Madhavan</strong></p>
+<p class="cv-contact">San Francisco, California | <a href="mailto:arulselvan1234@gmail.com">arulselvan1234@gmail.com</a> | (650)-336-3892</p>
+<p class="cv-links"><a href="http://www.linkedin.com/in/arulselvanmadhavan">LinkedIn</a> | <a href="https://github.com/ArulselvanMadhavan">Github</a> | <a href="https://scholar.google.com/citations?hl=en&user=8r4bPwQAAAAJ">Google Scholar</a></p>
+</div>
+#+END_EXPORT
+
+* EDUCATION SUMMARY
+-----
+
+** Northeastern University, Boston, MA. / Sep 2014 - Dec. 2016
+- Masters in Computer Science (GPA: 3.8)
+
+* TECHNICAL KNOWLEDGE
+-----
+
+- Languages: Scala, Go, Python, OCaml, Javascript, C++, C, Haskell, Fortran
+- Parallel Frameworks: OpenMP, MPI, GPU - CUDA
+- Visualization Frameworks: react, vega, panel, holoviews, bonsai
+- Performance Tools: pprof, likwid, perf, flamegraph and HPC@Cori
+
+* PROFESSIONAL EXPERIENCE
+-----
+
+** Machine Systems Engineer at LightMatter, Mountain View / July 2022 - Present
+Tools Used: Pytorch, Python, Ocaml
+
+- ML Systems modeling: Built an analytical and event driven simulator for modeling data center level ML training and inference performance incorporating optical interconnects
+- Primary contributor to a pytorch extension library that simulated analog matrix multiplications on the photonic hardware with adaptive quantization techniques. [[https://www.nature.com/articles/s41586-025-08854-x][Published in Nature magazine]]
+- Built a [[https://github.com/ArulselvanMadhavan/quantviz][library]] for reduced bit width quantization (FP8, VS-quant) techniques with calibration support
+- Built an [[https://github.com/ArulselvanMadhavan/opine][open source library]] for writing large-scale python source-code transformations in OCaml
+- Implemented [[https://github.com/ArulselvanMadhavan/mini_dalle][mini-dalle]] and [[https://github.com/ArulselvanMadhavan/diffusers-ocaml][Stable Diffusion]] in OCaml
+
+** Performance Engineer at Chartboost, San Francisco / Sep 2020 - July 2022
+Tools Used: Golang, Scala, Spark, Tensorflow
+
+- Optimized ML Inference time (linear, DNN) with compression, optimized hash maps to be under 20ms.
+- Built a low latency real time bidder in Golang that handles 500K requests/sec in under 30 ms
+- Built a distributed key-value store that housed terabytes of data with read latency under 10ms
+- Built ML training pipelines for data scientists to train and deploy models (linear, DNN) to production
+- Built performance (CPU & Memory) observability tools to catch performance regressions in builds
+
+** Senior Software Engineer at Chartboost, San Francisco / March 2018 - Sep 2020
+Tools Used: Scala, cats, cats-effect, shapeless, refined
+
+- Built a high throughput AdExchange that conducts real time auctions for ad requests (100K /sec)
+- Built a low latency, real time ad scoring service by working with data scientists. Latency: 50ms/req
+- Led the efforts to promote typed functional programming, type-level programming and category theory among engineers within Chartboost. [[https://medium.com/@arulselvan1234][Engineering Blog]]
+
+** Software Engineer 2 at Intuit, Mountain View / January 2017 - March 2018
+
+- Designed and implemented a way to encode US tax regulations for all 50 states. Currently, used by more than 200K QuickBooks subscribers while onboarding employees into payroll
+
+** Software Developer Intern at Intuit, Mountain View / June 2016 - Aug 2016
+
+- Front end developer for Quickbooks' payroll product responsible for conducting UX research and building responsive user interfaces
+
+** Software Developer Co-op at Intuit, Cambridge / July 2015 - Dec 2015
+
+- Primary backend developer responsible for developing web services that connect to various non-relational data sources and enables clients to run "SQL" queries against them
+
+** Systems Engineer at Tata Consultancy Services, India / Dec 2011 - Aug 2014
+
+- Primary developer of internal tools team responsible for researching and developing software tools that automate the manual task of engineers
+
+* OPEN SOURCE CONTRIBUTION
+-----
+
+- [[https://github.com/ArulselvanMadhavan/opine][Opine]] - Python AST unparser written in OCaml. Enables python source code transformations in OCaml
+- [[https://github.com/ArulselvanMadhavan/diffusers-ocaml][Stable Diffusion 1.4]] - OCaml implementation of stable-diffusion
+- [[https://github.com/ArulselvanMadhavan/mini_dalle][mini-dalle]] - OCaml implementation of mini-dalle inference path
+- [[https://github.com/ArulselvanMadhavan/csc746/tree/master/tsunami][Tsunami Simulation]] - GPU Programming (OpenMP + OpenMPI) in a HPC @ Cori
+- [[https://github.com/hmemcpy/milewski-ctfp-pdf/releases/tag/v1.4.0-rc1][Category Theory For Programmers - OCaml edition]] - Primary contributor
+- [[https://github.com/fthomas/scala-steward#contributors][Scala-steward]] - Contributed the ability to run this bot on private repos
+- [[https://www.youtube.com/channel/UCwAxoFPbO9XHT3l698qjO-Q][YouTube Channel for scala talks]]

@@ -1,0 +1,5 @@
+(executable
+ (public_name portfolio)
+ (name generate)
+ (libraries portfolio_lib cmdliner unix)
+ (modules generate))

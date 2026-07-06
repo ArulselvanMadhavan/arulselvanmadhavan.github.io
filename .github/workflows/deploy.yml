@@ -1,0 +1,61 @@
+name: Build and Deploy Portfolio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up OCaml
+        uses: ocaml/setup-ocaml@v3
+        with:
+          ocaml-compiler: 5.5.0
+          dune-cache: true
+
+      - name: Install dependencies
+        run: opam install . --deps-only -y
+
+      - name: Install pandoc for PDF generation
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq pandoc texlive-latex-base texlive-fonts-recommended
+
+      - name: Build and generate site
+        run: opam exec -- dune exec portfolio -- _site
+
+      - name: Upload CV PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-pdf
+          path: _site/cv.pdf
+          retention-days: 90
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

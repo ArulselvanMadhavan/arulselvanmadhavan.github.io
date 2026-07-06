@@ -1,0 +1,37 @@
+x-portfolio: &portfolio
+  build: .
+  working_dir: /workspace
+  user: "${HOST_UID}:${HOST_GID}"
+  volumes:
+    - .:/workspace
+    - ${OPAMROOT:-/lm/users/arul/.opam}:/lm/users/arul/.opam
+  environment:
+    OPAMROOT: /lm/users/arul/.opam
+    OPAMSWITCH: ${OPAMSWITCH:-default}
+    HOST_UID: ${HOST_UID}
+    HOST_GID: ${HOST_GID}
+    PORT: ${PORT:-8080}
+
+services:
+  build:
+    <<: *portfolio
+    command: >
+      sh -c "dune build && dune exec portfolio -- _site"
+
+  shell:
+    <<: *portfolio
+    stdin_open: true
+    tty: true
+    command: bash
+
+  serve:
+    build: .
+    working_dir: /workspace
+    user: "${HOST_UID}:${HOST_GID}"
+    volumes:
+      - .:/workspace
+    environment:
+      PORT: ${PORT:-8080}
+    entrypoint: ["/bin/sh", "/docker/serve.sh"]
+    ports:
+      - "${PORT:-8080}:${PORT:-8080}"

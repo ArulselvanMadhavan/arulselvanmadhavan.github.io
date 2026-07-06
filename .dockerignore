@@ -1,0 +1,10 @@
+.git
+.github
+_build
+_site
+*.install
+*.merlin
+*.opam.locked
+.dockerignore
+Dockerfile
+docker-compose.yml
