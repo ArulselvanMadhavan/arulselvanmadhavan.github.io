@@ -27,7 +27,9 @@ jobs:
           dune-cache: true
 
       - name: Install dependencies and build
-        run: opam install . -y
+        run: |
+          dune build
+          opam install . -y
 
       - name: Install pandoc for PDF generation
         run: |

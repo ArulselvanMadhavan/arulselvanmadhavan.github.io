@@ -2,6 +2,8 @@
 
 (name portfolio)
 
+(generate_opam_files true)
+
 (source
  (github arulselvanmadhavan/arulselvanmadhavan.github.io))
 
