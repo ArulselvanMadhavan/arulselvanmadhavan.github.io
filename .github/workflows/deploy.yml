@@ -35,7 +35,7 @@ jobs:
           sudo apt-get install -y -qq pandoc texlive-latex-base texlive-fonts-recommended
 
       - name: Build and generate site
-        run: portfolio _site
+        run: opam exec -- portfolio _site
 
       - name: Upload CV PDF artifact
         uses: actions/upload-artifact@v4
