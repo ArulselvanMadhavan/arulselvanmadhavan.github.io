@@ -35,7 +35,7 @@ jobs:
       - name: Install pandoc for PDF generation
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq pandoc texlive-latex-base texlive-fonts-recommended
+          sudo apt-get install -y -qq pandoc texlive-latex-recommended texlive-fonts-recommended
 
       - name: Build and generate site
         run: opam exec -- portfolio _site

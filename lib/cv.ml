@@ -117,5 +117,4 @@ let generate ~resume_path ~output_dir =
     | Ok () -> Ok ()
     | Error msg ->
         if Sys.file_exists pdf_path then Sys.remove pdf_path;
-        prerr_endline ("Warning: could not generate PDF — " ^ msg);
-        Ok ())
+        Error (Printf.sprintf "could not generate PDF — %s" msg))
