@@ -51,6 +51,9 @@ The project takes structured data (defined in OCaml) and raw documents (Org-mode
 - **CV/Resume**: Edit `source/resume.org`.
 - **Styling**: Edit `static/style.css` or `static/cv.css`.
 
+⚠️ **Critical: Manual Synchronization**
+The project currently uses two separate sources of truth for content: `source/resume.org` (for CV/PDF) and `lib/content.ml` (for the Portfolio home page). Whenever you update the resume (e.g., email, experience, skills), you **must** manually update the corresponding values in `lib/content.ml` to avoid inconsistencies on the live site.
+
 ## 📜 Core Rules & Guidelines
 
 1. **Type Safety**: When adding new fields to the profile or timeline, update the types in `lib/content.ml` first, then update the rendering logic in `lib/render.ml`.
