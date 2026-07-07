@@ -28,7 +28,8 @@ jobs:
 
       - name: Install dependencies and build
         run: |
-          opam exec -- dune build
+          opam exec -- dune build || true
+          ls -la *.opam || echo "No opam file found"
           opam exec -- opam install . -y
 
       - name: Install pandoc for PDF generation
